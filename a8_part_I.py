@@ -9,14 +9,17 @@ import re
 # should extract a match where the first group is the month, the second group the day
 # and the third group the year
 date_string = "November 9, 1982"
-pat = re.compile("REPLACE ME", re.IGNORECASE)
+pat = re.compile("\w+ \d{1,2}, \d+", re.IGNORECASE)
 date_matches = pat.match(date_string)
+print(date_matches)
+
+
 
 # problem 2
 # should extract a match where the first group is the number, the second the street, the
 # third the city, the fourth the state and the fifth the zip code
 address_string = "2501 Addison Street\nChicago, IL 60618"
-pat = re.compile("REPLACE ME", re.IGNORECASE)
+pat = re.compile("\d+ ", re.IGNORECASE)
 address_matches = pat.match(address_string)
 
 # problem 3
@@ -54,8 +57,8 @@ if __name__ == "__main__":
 
     print("<<<<< Hashtag Problem >>>>>\n")
     # uncomment the following prints to see results and asserts to test
-    # print(f"hashtags are: {mats}") # should be ['cs', 'python', 'LT', 'champions']"
-    # assert mats == ['cs', 'python', 'LT', 'champions'], "Incorrect hashtags"
+    # print(f"hashtags are: {#_matches}") # should be ['cs', 'python', 'LT', 'champions']"
+    # assert #_matches == ['cs', 'python', 'LT', 'champions'], "Incorrect hashtags"
     # print('\n<<<< Hashtag extraction tests passed >>>>\n')
 
     # print('\n<<<< All tests passed! >>>>')
